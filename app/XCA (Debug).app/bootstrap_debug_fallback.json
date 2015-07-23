@@ -1,0 +1,211 @@
+{
+    "links": [
+              {
+              "rel": "self",
+              "href": "http://lb-mcapi1t.buch.de:14000/de.buch.ecp.mobile_clientapi.application/api/rest/2003/device/v1/init"
+              },
+              {
+              "rel": "userLoginURL",
+              "href": "https://integration.buch.de/auth/oauth2/token"
+              },
+              {
+              "rel": "oAuthRevokeURL",
+              "href": "https://integration.buch.de/auth/oauth2/revoke"
+              },
+              {
+              "rel": "thaliathek_profile_url",
+              "href": "https://staging.textunes.de/thaliathek/api/rest/profile"
+              },
+              {
+              "rel": "thaliathek_delivery_url",
+              "href": "https://staging.textunes.de/thaliathek/api/rest/bookseller/delivery"
+              },
+              {
+              "rel": "thaliathek_copies_url",
+              "href": "https://staging.textunes.de/thaliathek/api/rest/bookseller/copies"
+              },
+              {
+              "rel": "thaliathek_edit_url",
+              "href": "https://staging.textunes.de/thaliathek/bookseller/rating.xhtml"
+              }
+              ],
+    "mandants": [
+                 {
+                 "country": "DE",
+                 "links": [
+                           {
+                           "href": "https://integration.buch.de/auth/oauth2/token",
+                           "rel": "userLoginURL"
+                           },
+                           {
+                           "href": "https://cebra.shoptmp5e.buch.de/de.buch.shop/shop/2003/tha_homestartseite/kunde/neu/",
+                           "rel": "userRegistrationURL"
+                           },
+                           {
+                           "href": "https://cebra.shoptmp5e.buch.de/de.buch.shop/shop/2003/tha_homestartseite/ersatzpasswort/",
+                           "rel": "userPasswordResetURL"
+                           },
+                           {
+                           "href": "https://integration.buch.de/de.buch.appservices/api/2003/readerRegistration",
+                           "rel": "deviceRegistrationURL"
+                           },
+                           {
+                           "href": "http://www.thalia.de/buch-resources/mandant/2003.readerapp/info/faq.html",
+                           "rel": "faqURL"
+                           },
+                           {
+                           "href": "https://integration.buch.de/de.buch.shop/shop/2003/home/warenkorb/add/",
+                           "rel": "checkoutBaseURL"
+                           },
+                           {
+                           "href": "http://cebra.shoptmp5e.buch.de/de.buch.shop/shop/2003/tha_homestartseite/warenkorb/",
+                           "rel": "showShoppingCartWeb"
+                           },
+                           {
+                           "href": "http://vm-artikelservice1t.buch.de:15400/de.buch.pim.artikelservice.application/api/rest/2003/artikel/",
+                           "rel": "articleService"
+                           },
+                           {
+                           "href": "https://integration.buch.de/de.buch.appservices/api/2003/categories",
+                           "rel": "getCategoryTree"
+                           },
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/2003/suche/v1",
+                           "rel": "searchSevice"
+                           },
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/2003/navigation/inhalt/v1",
+                           "rel": "navigationService"
+                           },
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/2003/navigation/v1",
+                           "rel": "navigationTree"
+                           },
+                           {
+                           "href": "http://lb-mcapi1t.buch.de:14000/de.buch.ecp.mobile_clientapi.application/api/rest/2003/merkliste/v1",
+                           "rel": "getWishlist"
+                           }
+                           ],
+                 "mandantId": 2003,
+                 "text": "Deutschland (Thalia.de)"
+                 },
+                 {
+                 "country": "AT",
+                 "links": [
+                           {
+                           "href": "https://integration.buch.de/auth/oauth2/token",
+                           "rel": "userLoginURL"
+                           },
+                           {
+                           "href": "https://cebra.shoptmp5e.buch.de/de.buch.shop/shop/4002/tha_homestartseite/kunde/neu/",
+                           "rel": "userRegistrationURL"
+                           },
+                           {
+                           "href": "https://cebra.shoptmp5e.buch.de/de.buch.shop/shop/4002/tha_homestartseite/ersatzpasswort/",
+                           "rel": "userPasswordResetURL"
+                           },
+                           {
+                           "href": "https://integration.buch.de/de.buch.appservices/api/4002/readerRegistration",
+                           "rel": "deviceRegistrationURL"
+                           },
+                           {
+                           "href": "http://www.thalia.de/buch-resources/mandant/4002.readerapp/info/faq.html",
+                           "rel": "faqURL"
+                           },
+                           {
+                           "href": "https://integration.buch.de/de.buch.shop/shop/4002/home/warenkorb/add/",
+                           "rel": "checkoutBaseURL"
+                           },
+                           {
+                           "href": "http://cebra.shoptmp5e.buch.de/de.buch.shop/shop/4002/tha_homestartseite/warenkorb/",
+                           "rel": "showShoppingCartWeb"
+                           },
+                           {
+                           "href": "http://vm-artikelservice1t.buch.de:15400/de.buch.pim.artikelservice.application/api/rest/4002/artikel/",
+                           "rel": "articleService"
+                           },
+                           {
+                           "href": "https://integration.buch.de/de.buch.appservices/api/4002/categories",
+                           "rel": "getCategoryTree"
+                           },
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/4002/suche/v1?suchbegriff=",
+                           "rel": "searchSevice"
+                           },
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/4002/navigation/inhalt/v1?bereich=",
+                           "rel": "navigationService"
+                           },
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/4002/navigation/v1?tiefe=",
+                           "rel": "navigationTree"
+                           },
+                           {
+                           "href": "http://lb-mcapi1t.buch.de:14000/de.buch.ecp.mobile_clientapi.application/api/rest/4002/merkliste/v1",
+                           "rel": "getWishlist"
+                           }
+                           ],
+                 "mandantId": 4002,
+                 "text": "\u00d6sterreich (Thalia.at)"
+                 },
+                 {
+                 "country": "CH",
+                 "links": [
+                           {
+                           "href": "https://integration.buch.de/auth/oauth2/token",
+                           "rel": "userLoginURL"
+                           }, 
+                           {
+                           "href": "https://cebra.shoptmp5e.buch.de/de.buch.shop/shop/23002/tha_homestartseite/kunde/neu/", 
+                           "rel": "userRegistrationURL"
+                           }, 
+                           {
+                           "href": "https://cebra.shoptmp5e.buch.de/de.buch.shop/shop/23002/tha_homestartseite/ersatzpasswort/", 
+                           "rel": "userPasswordResetURL"
+                           }, 
+                           {
+                           "href": "https://integration.buch.de/de.buch.appservices/api/23002/readerRegistration", 
+                           "rel": "deviceRegistrationURL"
+                           }, 
+                           {
+                           "href": "http://www.thalia.de/buch-resources/mandant/23002.readerapp/info/faq.html", 
+                           "rel": "faqURL"
+                           }, 
+                           {
+                           "href": "https://integration.buch.de/de.buch.shop/shop/23002/home/warenkorb/add/", 
+                           "rel": "checkoutBaseURL"
+                           }, 
+                           {
+                           "href": "http://cebra.shoptmp5t.buch.de/de.buch.shop/shop/23002/tha_homestartseite/warenkorb/", 
+                           "rel": "showShoppingCartWeb"
+                           }, 
+                           {
+                           "href": "http://vm-artikelservice1t.buch.de:15400/de.buch.pim.artikelservice.application/api/rest/23002/artikel/", 
+                           "rel": "articleService"
+                           }, 
+                           {
+                           "href": "https://integration.buch.de/de.buch.appservices/api/23002/categories", 
+                           "rel": "getCategoryTree"
+                           }, 
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/23002/suche/v1?suchbegriff=",
+                           "rel": "searchSevice"
+                           }, 
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/23002/navigation/inhalt/v1?bereich=", 
+                           "rel": "navigationService"
+                           }, 
+                           {
+                           "href": "http://vm-suchservice1t.buch.de:10500/de.buch.ecommerce.suchservice.suchservice-application/api/rest/23002/navigation/v1?tiefe=", 
+                           "rel": "navigationTree"
+                           }, 
+                           {
+                           "href": "http://lb-mcapi1t.buch.de:14000/de.buch.ecp.mobile_clientapi.application/api/rest/23002/merkliste/v1", 
+                           "rel": "getWishlist"
+                           }
+                           ], 
+                 "mandantId": 23002, 
+                 "text": "Schweiz (Thalia.CH)"
+                 }
+                 ]
+}
