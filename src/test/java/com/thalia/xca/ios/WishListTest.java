@@ -58,22 +58,25 @@ public class WishListTest {
 				eName = "Krimis & Thriller";
 				element = wd.findElementByName(eName);
 				element.click();
-		        Thread.sleep(4000);
+		        Thread.sleep(5000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 
-		        eName = "ic merkzettel";
+		        eName = "Merkzettel";
 				element = wd.findElementByName(eName);
 				element.click();
 		        Thread.sleep(3000);
 				
+		        eName = "Startseite";
+				element = wd.findElementByName(eName);
+				element.click();
+		        Thread.sleep(2000);
+
 		        eName = "Merkzettel";
 				element = wd.findElementByName(eName);
-		        Thread.sleep(2000);
-		        
+		        Thread.sleep(3000);
+
 				assertTrue("Article not present in Wish List though expected", element.getAttribute("value").equals("1 Objekt"));
 
 			}
@@ -100,12 +103,10 @@ public class WishListTest {
 				eName = "Krimis & Thriller";
 				element = wd.findElementByName(eName);
 				element.click();
-		        Thread.sleep(4000);
+		        Thread.sleep(5000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 				
 		        eName = "Mehr";
 				element = wd.findElementByName(eName);
@@ -149,24 +150,22 @@ public class WishListTest {
 				eName = "Krimis & Thriller";
 				element = wd.findElementByName(eName);
 				element.click();
-		        Thread.sleep(3000);
+		        Thread.sleep(5000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 
 				eName = "Article Title";
 				element = wd.findElementByXPath(AppiumSetup.articleTitleSmall);
 				check = element.getAttribute("name");
 		        Thread.sleep(2000);
 
-		        eName = "ic merkzettel";
+		        eName = "Merkzettel";
 				element = wd.findElementByName(eName);
 				element.click();
 		        Thread.sleep(3000);
 		        
-		        eName = "ic merkzettel select";
+		        eName = "Merkzettel";
 				element = wd.findElementByName(eName);
 				element.click();
 		        Thread.sleep(3000);		        
@@ -188,6 +187,7 @@ public class WishListTest {
 				element.click();
 		        Thread.sleep(3000);
 		        
+				wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		        List<MobileElement> list = new ArrayList<MobileElement>();
 				list = wd.findElementsByName(check);
 
@@ -219,19 +219,17 @@ public class WishListTest {
 				eName = "Krimis & Thriller";
 				element = wd.findElementByName(eName);
 				element.click();
-		        Thread.sleep(3000);
+		        Thread.sleep(10000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 
 				eName = "Article Title";
 				element = wd.findElementByXPath(AppiumSetup.articleTitleSmall);
 				check = element.getAttribute("name");
 		        Thread.sleep(2000);
 
-		        eName = "ic merkzettel";
+		        eName = "Merkzettel";
 				element = wd.findElementByName(eName);
 				element.click();
 		        Thread.sleep(3000);
@@ -255,7 +253,6 @@ public class WishListTest {
 		        Thread.sleep(3000);
 		        
 	            wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		        
 		        List<MobileElement> list = new ArrayList<MobileElement>();
 				list = wd.findElementsByName(check);
 
@@ -289,17 +286,15 @@ public class WishListTest {
 				element.click();
 		        Thread.sleep(3000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 
 				eName = "Article Title";
 				element = wd.findElementByXPath(AppiumSetup.articleTitleSmall);
 				check = element.getAttribute("name");
 		        Thread.sleep(2000);
 
-		        eName = "ic merkzettel";
+		        eName = "Merkzettel";
 				element = wd.findElementByName(eName);
 				element.click();
 		        Thread.sleep(3000);
@@ -356,24 +351,22 @@ public class WishListTest {
 				eName = "Sortiment";
 				element = wd.findElementByName(eName);
 				element.click();
-		        Thread.sleep(3000);
+		        Thread.sleep(10000);
 
-				eName = "Kalender";
+				eName = "Comics & Manga";
 				element = wd.findElementByName(eName);
 				element.click();
+		        Thread.sleep(4000);
+		        
+		        iCap.tapFirstElement(wd);
 		        Thread.sleep(3000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
-
 				eName = "Article Title";
 				element = wd.findElementByXPath(AppiumSetup.articleTitleSmall);
 				check = element.getAttribute("name");
 		        Thread.sleep(2000);
 		      
-		        eName = "ic merkzettel";
+		        eName = "Merkzettel";
 				element = wd.findElementByName(eName);
 				element.click();
 		        Thread.sleep(3000);

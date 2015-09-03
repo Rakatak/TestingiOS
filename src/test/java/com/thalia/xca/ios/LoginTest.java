@@ -13,7 +13,6 @@ import org.openqa.selenium.NoSuchElementException;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.thalia.xca.ios.prop.AbstractExcAction;
-import com.thalia.xca.ios.prop.AppiumSetup;
 import com.thalia.xca.ios.prop.IOSCapabilities;
 
 public class LoginTest {
@@ -44,6 +43,7 @@ public class LoginTest {
 			@Override
 			public void actionPerformedWithThrows() throws NoSuchElementException, InterruptedException {
 				
+				Thread.sleep(3000);
 				eName = "Mehr";
 				element = wd.findElementByName(eName);
 				element.click();
@@ -55,9 +55,9 @@ public class LoginTest {
 		        Thread.sleep(2000);
 
 		        if (iCap.screenHeight < 1024) {
-		        	wd.tap(1, 162, 278, 500);
+		        	wd.tap(1, 162, 227, 500);
 		        } else {
-		        	wd.tap(1, 400, 275, 500);
+		        	wd.tap(1, 400, 195, 500);
 		        }
 		        Thread.sleep(2000);
 		        
@@ -94,6 +94,7 @@ public class LoginTest {
 			@Override
 			public void actionPerformedWithThrows() throws NoSuchElementException, InterruptedException {
 
+				Thread.sleep(3000);
 				eName = "Mehr";
 				element = wd.findElementByName(eName);
 				element.click();
@@ -105,9 +106,9 @@ public class LoginTest {
 		        Thread.sleep(2000);
 
 		        if (iCap.screenHeight < 1024) {
-		        	wd.tap(1, 162, 278, 500);
+		        	wd.tap(1, 162, 227, 500);
 		        } else {
-		        	wd.tap(1, 400, 275, 500);
+		        	wd.tap(1, 400, 195, 500);
 		        }
 		        Thread.sleep(2000);
 
@@ -133,11 +134,8 @@ public class LoginTest {
 				element.click();
 				Thread.sleep(1000);
 				
-				if (AppiumSetup.v.equals("8")){
-					eName = iCap.username;
-				} else {
-					eName = "Benutzer, " + iCap.username;
-				}
+				eName = iCap.username;
+				
 				element = wd.findElementByName(eName);
 				
 				assertTrue("Login didn't result in logged in screen", element.getAttribute("name").contains(iCap.username));
@@ -150,9 +148,11 @@ public class LoginTest {
     public void dashboardLoginTest() throws Exception {
     	        
     	AbstractExcAction action =  new AbstractExcAction(wd){
+    		
 			@Override
 			public void actionPerformedWithThrows() throws NoSuchElementException, InterruptedException {
     	
+				Thread.sleep(3000);
 		    	eName = "Mehr";
 				element = wd.findElementByName(eName);
 				element.click();
@@ -164,9 +164,9 @@ public class LoginTest {
 		        Thread.sleep(2000);
 
 		        if (iCap.screenHeight < 1024) {
-		        	wd.tap(1, 162, 278, 500);
+		        	wd.tap(1, 162, 227, 500);
 		        } else {
-		        	wd.tap(1, 400, 275, 500);
+		        	wd.tap(1, 400, 195, 500);
 		        }
 		        Thread.sleep(2000);
 
@@ -219,6 +219,7 @@ public class LoginTest {
 			@Override
 			public void actionPerformedWithThrows() throws NoSuchElementException, InterruptedException {
 
+				Thread.sleep(3000);
 				eName = "Mehr";
 				element = wd.findElementByName(eName);
 				element.click();
@@ -230,9 +231,9 @@ public class LoginTest {
 		        Thread.sleep(2000);
 
 		        if (iCap.screenHeight < 1024) {
-		        	wd.tap(1, 162, 278, 500);
+		        	wd.tap(1, 162, 227, 500);
 		        } else {
-		        	wd.tap(1, 400, 275, 500);
+		        	wd.tap(1, 400, 195, 500);
 		        }
 		        Thread.sleep(2000);
 
@@ -264,11 +265,7 @@ public class LoginTest {
 				Thread.sleep(1000);
 				
 				eName = "Abmelden2";
-				if (AppiumSetup.v.equals("8")){
-					element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[2]");
-				} else {
-					element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[3]/UIAAlert[1]/UIATableView[2]/UIATableCell[1]");
-				}
+				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[2]");
 				element.click();
 				Thread.sleep(1000);
 				

@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.UnknownHostException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -31,7 +32,7 @@ public class IOSCapabilities {
 		capabilities.setCapability("platformName", "iOS");
 		capabilities.setCapability("bundleId", AppiumSetup.bundleId);
 
-		if (computername.equals("Reserve2-iMac-2.local") || computername.equals("Reserve2-iMac.local") || computername.equals("Andreas-MacBook-Pro")) {
+		if (computername.equals("Reserve2-iMac.local")) {
 
 			capabilities.setCapability("udid", AppiumSetup.udid);
 			capabilities.setCapability("app", AppiumSetup.localPath);
@@ -40,13 +41,6 @@ public class IOSCapabilities {
 			wd = new IOSDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 			wd.manage().timeouts().implicitlyWait(AppiumSetup.timeOut, TimeUnit.SECONDS);
 
-	    	password = "hummel123";
-	    	username = "xcabasicde@thqa.de";
-	    	
-	    	if (AppiumSetup.udid.equals("b352be57db9ef2f0ac8497b80b3b2df3a7bd4dc6") || AppiumSetup.udid.equals("70911e2530c8ee3088af7834c0f893c0e77a801f") || AppiumSetup.udid.equals("e15942aced8806109d52237b515ad7c1a97cabba") || AppiumSetup.udid.equals("1874cce495990ad81419c700ecd52ecd20d205d0")){
-	    		AppiumSetup.v = "8";
-	    	}
-	    	
 		} else {
 
 			String version = System.getProperty("VERSION");
@@ -61,41 +55,41 @@ public class IOSCapabilities {
 
 			wd = new IOSDriver<MobileElement>(new URL("http://0.0.0.0:" + port + "/wd/hub"), capabilities);
 			wd.manage().timeouts().implicitlyWait(AppiumSetup.timeOut, TimeUnit.SECONDS);
-			
-	    	password = "hummel123";
-	    	username = "xcabasicde@thqa.de";
-
-	    	if (udid.equals("b352be57db9ef2f0ac8497b80b3b2df3a7bd4dc6") || udid.equals("70911e2530c8ee3088af7834c0f893c0e77a801f") || udid.equals("e15942aced8806109d52237b515ad7c1a97cabba") || udid.equals("1874cce495990ad81419c700ecd52ecd20d205d0")){
-	    		AppiumSetup.v = "8";
-	    	}
 		}
+		
+		password = "hummel123";
+    	username = "xcabasicde@thqa.de";
+    	
 		String[] dimensions = wd.manage().window().getSize().toString().split("\\D");
 		screenWidth = Integer.parseInt(dimensions[1]);
 		screenHeight = Integer.parseInt(dimensions[3]);
-
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 		return wd;
-
 	}
 	
 	public void selectStatic(IOSDriver<MobileElement> wd, Double screenHeight) {
 		try{
 			MobileElement select = null;
+			
 			select = wd.findElementByName("Mehr");
 			select.click();
 			Thread.sleep(2000);
+			
 			select = wd.findElementByName("Test/Debug");
 			select.click();
 			Thread.sleep(3000);
-			if ( screenHeight >= 1024) {
-				wd.tap(1, 388, 480, 500);
-			} else {
+			
+			if ( screenHeight < 1024) {
 				wd.tap(1, 164, 480, 500);
+			} else {
+				wd.tap(1, 388, 480, 500);
 			}
 			Thread.sleep(5000);
+			
 			select = wd.findElementByName("Select & Reset App");
 			select.click();
 			Thread.sleep(2000);
+			
 		} catch (Exception ex){
         		wd.quit();	
 			assertTrue("selectStatic() failed, no Internet Connection or REST-Api available", false);
@@ -108,19 +102,22 @@ public class IOSCapabilities {
 			select = wd.findElementByName("Mehr");
 			select.click();
 			Thread.sleep(2000);
+			
 			select = wd.findElementByName("Test/Debug");
 			select.click();
 			Thread.sleep(3000);
-			if ( screenHeight >= 1024) {
-				wd.tap(1, 388, 420, 500);
-
-			} else {
+			
+			if ( screenHeight < 1024) {
 				wd.tap(1, 164, 423, 500);
+			} else {
+				wd.tap(1, 388, 420, 500);
 			}
 			Thread.sleep(3000);
+			
 			select = wd.findElementByName("Select & Reset App");
 			select.click();
 			Thread.sleep(3000);
+			
 		} catch (Exception ex){
         	wd.quit();	
 			assertTrue("selectLive() failed, no Internet Connection or REST-Api available", false);
@@ -130,6 +127,7 @@ public class IOSCapabilities {
 	public String hitGoButton(IOSDriver<MobileElement> wd, String eName){
 		MobileElement element;
 		eName = "Go Button";
+		
 		if (screenHeight >= 1024) {
 			element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[2]/UIAKeyboard[1]/UIAButton[1]");
 			element.click();
@@ -139,6 +137,18 @@ public class IOSCapabilities {
 			element.click();
 		}
 		return eName;
+	}
+	
+	public void tapFirstElement(IOSDriver<MobileElement> wd){
+		if (screenHeight < 1024) {
+			wd.tap(1 ,64, 184, 500);
+		} else {
+			wd.tap(1 ,345, 174, 500);
+		}
+//		 eName = "First Article";
+//			element = wd.findElementByXPath(UIElements.firstArticleX);
+//			element.click();
+//	        Thread.sleep(2000);
 	}
 	
 	public static void checkInet(){
@@ -153,6 +163,22 @@ public class IOSCapabilities {
 			e.printStackTrace();
 		  	System.exit(0);
 		} 
+	}
+	
+	public MobileElement putInCart(IOSDriver<MobileElement> wd, String eName) throws InterruptedException{
+		wd.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+		Thread.sleep(3330);
+		int limit = 0;
+		List<MobileElement> temps = wd.findElementsByName(eName);
+		while (temps.size() == 0 && limit < 5){
+			wd.swipe((int)(screenWidth*0.8), 400, (int)(screenWidth*0.12), 400, 500);
+			Thread.sleep(3000);
+			temps = wd.findElementsByName(eName);
+			Thread.sleep(3330);
+			limit++;
+		}
+		wd.manage().timeouts().implicitlyWait(AppiumSetup.timeOut, TimeUnit.SECONDS);
+		return temps.get(0);
 	}
 
 }

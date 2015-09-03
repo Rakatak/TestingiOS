@@ -103,14 +103,18 @@ public class SearchTest {
 				Thread.sleep(1000);
 				
 				eName = "Hit Go Button";
-//				eName = iCap.hitGoButton(wd, eName);
-		        Thread.sleep(2000);
+				eName = iCap.hitGoButton(wd, eName);
+		        Thread.sleep(8000);
 
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
+		        
 				eName = "First Article after search";
-				resultList = wd.findElementsByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]");
+				resultList = wd.findElementsByClassName("UIAImage"); //TODO
 				Thread.sleep(2000);
+				System.out.print(resultList.size());
 							
-				assertTrue("The input: (" + searchInput + ") wasn't displayed correctly in the results", resultList.size() == 1);		
+				assertTrue("The input: (" + searchInput + ") wasn't displayed correctly in the results", resultList.size() > 7);		
 			}
     	};
     	action.performAction();

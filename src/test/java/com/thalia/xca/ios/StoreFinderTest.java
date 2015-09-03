@@ -47,6 +47,7 @@ public class StoreFinderTest {
 			@Override
 			public void actionPerformedWithThrows() throws NoSuchElementException, InterruptedException {
 				
+//				findByNameShort("hshshshs");
 				eName = "Mehr";
 				element = wd.findElementByName(eName);
 				element.click();
@@ -112,11 +113,7 @@ public class StoreFinderTest {
 				element.click();
 				Thread.sleep(1000);
 				
-				if (AppiumSetup.v.equals("8")){
-					eName = "Berlin";
-				} else {
-					eName = "Berlin, (12)";
-				}
+				eName = "Berlin";
 				element = wd.findElementByName(eName);
 				element.click();
 				Thread.sleep(1000);

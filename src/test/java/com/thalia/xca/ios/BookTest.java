@@ -58,10 +58,8 @@ public class BookTest {
 				element.click();
 		        Thread.sleep(3000);
 		        					
-				eName = "First book in Listview";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-				Thread.sleep(8000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(5000);
 				
 				wd.swipe((int)(iCap.screenWidth*0.8), 400, (int)(iCap.screenWidth*0.12), 400, 500);
 	    		Thread.sleep(6000);
@@ -77,7 +75,7 @@ public class BookTest {
     	action.performAction();
     }
     
-    @Test
+    @Test @Ignore
     public void detailPageTest() throws Exception {
     	
     	AbstractExcAction action =  new AbstractExcAction(wd){

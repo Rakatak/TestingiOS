@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.SessionNotFoundException;
 
 public abstract class AbstractExcAction {
@@ -17,11 +18,11 @@ public abstract class AbstractExcAction {
 		this.wd = wd;
 	}
 	
-	public final void performAction() {
+	public final void performAction() throws InterruptedException {
 		
 		try {
-			Thread.sleep(1000);
 			actionPerformedWithThrows();
+			Thread.sleep(2000);
 			
 		} catch (NoSuchElementException ex) {
     		assertTrue("Element \"" + eName + "\" could not be located : NoSuchElementException", false);
@@ -35,13 +36,21 @@ public abstract class AbstractExcAction {
     		assertTrue("Before clicking Element \"" + eName + "\" the app broke down: SessionNotFoundException", false);
 		} finally {
 			try {
-				wd.quit();
-			} catch (Exception e) {
+				wd.removeApp(AppiumSetup.bundleId);
+				Thread.sleep(10000);
+			} catch (SessionNotFoundException e) {
 	    		assertTrue("Before clicking Element \"" + eName + "\" the app broke down: SessionNotFoundException", false);
+			} catch (WebDriverException e) {
+	    		assertTrue("", true);
 
 			}
 		}
 	}
+	
+	public void findByNameShort(String input) {
+		eName = input;
+		wd.findElementByName(input);
+    }
 	
 	public abstract void actionPerformedWithThrows()
 			throws NoSuchElementException, InterruptedException;

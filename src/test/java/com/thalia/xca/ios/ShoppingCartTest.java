@@ -56,26 +56,18 @@ public class ShoppingCartTest {
 				eName = "Krimis & Thriller";
 				element = wd.findElementByName(eName);
 				element.click();
-		        Thread.sleep(4000);
+		        Thread.sleep(5000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(5000);
 		        
 		        if (iCap.screenHeight < 1024){
 		        	wd.swipe(300, (int)(iCap.screenHeight*0.8), 300, (int)(iCap.screenHeight*0.2), 500);
 		        }
 
 		        eName = "In den Warenkorb";
-				List<MobileElement> temps = wd.findElementsByName(eName);
-				while (temps.size() == 0){
-					wd.swipe((int)(iCap.screenWidth*0.8), 400, (int)(iCap.screenWidth*0.12), 400, 500);
-					Thread.sleep(3000);
-					temps = wd.findElementsByName(eName);
-					Thread.sleep(3330);
-				}
-				temps.get(0).click();
+		        MobileElement temp = iCap.putInCart(wd, eName);
+				temp.click();
 		        Thread.sleep(3000);
 				
 		        eName = "Mehr";
@@ -114,31 +106,26 @@ public class ShoppingCartTest {
 				eName = "Fantasy & Science Fiction";
 				element = wd.findElementByName(eName);
 				element.click();
-		        Thread.sleep(3000);
+		        Thread.sleep(5000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 
 		        if (iCap.screenHeight < 1024){
-		        	wd.swipe(300, (int)(iCap.screenHeight*0.8), 300, (int)(iCap.screenHeight*0.2), 500);
+		        	wd.swipe(300, (int)(iCap.screenHeight*0.8), 300, (int)(iCap.screenHeight*0.35), 500);
 		        }
 		        
 		        eName = "In den Warenkorb";
-				List<MobileElement> temps = wd.findElementsByName(eName);
-				while (temps.size() == 0){
-					wd.swipe((int)(iCap.screenWidth*0.8), 400, (int)(iCap.screenWidth*0.12), 400, 500);
-					Thread.sleep(3000);
-					temps = wd.findElementsByName(eName);
-					Thread.sleep(3330);
-				}
+		        MobileElement temp = iCap.putInCart(wd, eName);
+		        Thread.sleep(3000);
+		        
 				wd.getPageSource();
 				eName = "Article Title";
 				element = wd.findElementByXPath(AppiumSetup.articleTitleSmall);
 				check = element.getAttribute("name");
 		        Thread.sleep(2000);
-				temps.get(0).click();
+		        
+				temp.click();
 		        Thread.sleep(3000);
 		        
 		        eName = "Mehr";
@@ -151,6 +138,7 @@ public class ShoppingCartTest {
 				element.click();
 		        Thread.sleep(5000);
 		        
+				List<MobileElement> temps;
 		        wd.getPageSource();
 		        temps = wd.findElementsByClassName("UIAStaticText");
 		        
@@ -185,28 +173,19 @@ public class ShoppingCartTest {
 				eName = "Krimis & Thriller";
 				element = wd.findElementByName(eName);
 				element.click();
-		        Thread.sleep(3000);
+		        Thread.sleep(5000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(5000);
 		        
 		        if (iCap.screenHeight < 1024){
 		        	wd.swipe(300, (int)(iCap.screenHeight*0.8), 300, (int)(iCap.screenHeight*0.2), 500);
 		        }
-		        
 
 		        eName = "In den Warenkorb";
-				List<MobileElement> temps = wd.findElementsByName(eName);
-				while (temps.size() == 0){
-					wd.swipe((int)(iCap.screenWidth*0.8), 400, (int)(iCap.screenWidth*0.12), 400, 500);
-					Thread.sleep(3000);
-					temps = wd.findElementsByName(eName);
-					Thread.sleep(3330);
-				}
-				temps.get(0).click();
-		        Thread.sleep(5000);
+		        MobileElement temp = iCap.putInCart(wd, eName);
+		        temp.click();
+		        Thread.sleep(3000);
 		        
 		        eName = "Mehr";
 				element = wd.findElementByName(eName);
@@ -223,6 +202,7 @@ public class ShoppingCartTest {
 					Thread.sleep(3000);
 			    }
 		        
+				List<MobileElement> temps;
 		        eName = "Artikel Entfernen Link";
 		        temps = wd.findElementsByClassName("UIALink");
 		        temps.get(3).click();
@@ -260,29 +240,24 @@ public class ShoppingCartTest {
 				element.click();
 		        Thread.sleep(4000);
 		        
-				eName = "First Article";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-		        Thread.sleep(2000);
+		        iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 
 		        if (iCap.screenHeight < 1024){
 		        	wd.swipe(300, (int)(iCap.screenHeight*0.7), 300, (int)(iCap.screenHeight*0.4), 500);
 		        }
 		        
 				eName = "In den Warenkorb";
-				List<MobileElement> temps = wd.findElementsByName(eName);
-				while (temps.size() == 0){
-					wd.swipe((int)(iCap.screenWidth*0.8), 400, (int)(iCap.screenWidth*0.12), 400, 500);
-					Thread.sleep(3000);
-					temps = wd.findElementsByName(eName);
-					Thread.sleep(3330);
-				}
+		        MobileElement temp = iCap.putInCart(wd, eName);
+		        Thread.sleep(3000);
+		        
 				wd.getPageSource();
 				eName = "Article Title";
 				element = wd.findElementByXPath(AppiumSetup.articleTitleSmall);
 				check = element.getAttribute("name");
 		        Thread.sleep(2000);
-				temps.get(0).click();
+		        
+		        temp.click();
 		        Thread.sleep(3000);
 		        
 		        eName = "Mehr";
@@ -295,6 +270,7 @@ public class ShoppingCartTest {
 				element.click();
 		        Thread.sleep(15000);
 		        
+				List<MobileElement> temps;
 		        eName = "Artikel zum Merkzettel";
 		        temps = wd.findElementsByClassName("UIALink");
 		        temps.get(2).click();

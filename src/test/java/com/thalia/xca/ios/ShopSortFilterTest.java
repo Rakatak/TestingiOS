@@ -11,7 +11,6 @@ import org.openqa.selenium.NoSuchElementException;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.thalia.xca.ios.prop.AbstractExcAction;
-import com.thalia.xca.ios.prop.AppiumSetup;
 import com.thalia.xca.ios.prop.IOSCapabilities;
 
 public class ShopSortFilterTest {
@@ -116,14 +115,12 @@ public class ShopSortFilterTest {
 				eName = sorter;
 				element = wd.findElementByName(eName);
 				element.click();
-				Thread.sleep(1500);
+				Thread.sleep(6000);
 				
-				eName = "1st book element";
-				element =  wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-				Thread.sleep(1000);
+				iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 				
-		        eName = "ic merkzettel";
+		        eName = "Merkzettel";
 				element =  wd.findElementByName(eName);
 				
 				//Check the total number
@@ -161,11 +158,9 @@ public class ShopSortFilterTest {
 					element.click();
 					Thread.sleep(1000);
 			        
-					if (AppiumSetup.v.equals("8")){
-						eName = filter;
-					} else {
-						eName = filter + ", beliebig";
-					}					element = wd.findElementByName(eName);
+					
+					eName = filter;
+					element = wd.findElementByName(eName);
 					element.click();
 					Thread.sleep(1000);
 					
@@ -181,21 +176,23 @@ public class ShopSortFilterTest {
 	 				
 				} else {
 					
-					eName = "Filter";
-					element = wd.findElementByName(eName);
+
+					eName = "//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableGroup[1]/UIAElement[1]";
+					element = wd.findElementByXPath(eName);
 					element.click();
 					Thread.sleep(1500);
-			        
 					
-					if (AppiumSetup.v.equals("8")){
-						eName = filter;
-					} else {
-						eName = filter + ", :, beliebig ▾";
-					}
-					element = wd.findElementByName(eName);
+					
+					eName = "//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[3]/UIAStaticText[3]";
+					element = wd.findElementByXPath(eName);
 					element.click();
-					Thread.sleep(1000);
+					Thread.sleep(1500);
 					
+//					eName = filter;
+//					element = wd.findElementByName(eName);
+//					element.click();
+//					Thread.sleep(1000);
+//					
 					eName = "Filter Element";
 					element =  wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAPopover[1]/UIATableView[1]/UIATableCell[2]");
 					element.click();
@@ -203,12 +200,10 @@ public class ShopSortFilterTest {
 					
 				}
 				
-				eName = "1st book element";
-				element =  wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
-				element.click();
-				Thread.sleep(1000);
+				iCap.tapFirstElement(wd);
+		        Thread.sleep(3000);
 				
-		        eName = "ic merkzettel";
+		        eName = "Merkzettel";
 				element =  wd.findElementByName(eName);
 				
 				//Check the total number

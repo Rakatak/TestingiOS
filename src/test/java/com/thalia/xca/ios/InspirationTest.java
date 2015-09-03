@@ -46,7 +46,7 @@ public class InspirationTest {
 				element.click();
 				Thread.sleep(3000);
 
-				eName = "ic merkzettel";
+				eName = "Merkzettel";
 				element = wd.findElementByName(eName);
 				Thread.sleep(1000);
 
@@ -256,41 +256,6 @@ public class InspirationTest {
 					assertTrue("Favorite Category still appears on Inspiration Site", list.size() < 3);
 
 				}
-			}
-    	};
-    	action.performAction();
-    }
-    
-    @Test @Ignore
-    public void bookTipsTest() throws Exception {
-    	AbstractExcAction action =  new AbstractExcAction(wd){
-			@Override
-			public void actionPerformedWithThrows() throws NoSuchElementException, InterruptedException {
-				Thread.sleep(6000);
-				
-				eName = "Startseite";
-				element = wd.findElementByName(eName);
-				element.click();
-				Thread.sleep(5000);
-				
-				eName = "mehr Buchhändler";
-				if (iCap.screenHeight < 1024) {
-					element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIAButton[3]");
-				} else {
-					element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIAButton[2]");
-				}
-				element.click();
-				Thread.sleep(5000);
-				
-				eName = "Buchhändler-Tipps";
-				element = wd.findElementByName(eName);
-				Thread.sleep(1000);
-				
-				eName = "First book";
-				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]");
-				Thread.sleep(1000);
-
-				assertTrue("Neu und vielversprechend button doesn't give any Results", element.isEnabled());
 			}
     	};
     	action.performAction();

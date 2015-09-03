@@ -85,8 +85,8 @@ public class ShopTest {
 		    	checkList.add("zuletzt erschienen");
 		    	checkList.add("Preis: aufsteigend");
 		    	checkList.add("Preis: absteigend");
-		    	checkList.add("Titel: A–Z");
-		    	checkList.add("Titel: Z–A");
+		    	checkList.add("Titel: A-Z");
+		    	checkList.add("Titel: Z-A");
 		    	
 				eName = "Mehr";
 				element = wd.findElementByName(eName);
@@ -237,9 +237,12 @@ public class ShopTest {
 				
 				if ( iCap.screenHeight < 1024){
 
-					eName = "subcategories";
-					element = wd.findElementByName(eName);
-					element.click();
+//					eName = "subcategories";
+//					element = wd.findElementByName(eName);
+//					element.click();
+//					Thread.sleep(3000);
+					Thread.sleep(1000);
+					wd.tap(1, 23, 85, 500);
 					Thread.sleep(3000);
 					
 					eName = "Gehe zu Unterkategorie …";
@@ -254,9 +257,10 @@ public class ShopTest {
 //					element.click();
 //					Thread.sleep(1000);
 			        
-					eName = "Kategorien";
-					element = wd.findElementByName(eName);
-					Thread.sleep(1000);
+					eName = "//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableGroup[1]/UIAElement[1]";
+					element = wd.findElementByXPath(eName);
+//					element.click();
+					Thread.sleep(1500);
 					
 					assertTrue("Shop SlideMenu doesn't show up",  element.isEnabled() || element.isDisplayed());
 					
@@ -333,9 +337,13 @@ public class ShopTest {
 				if (iCap.screenHeight < 1024){
 
 					eName = "subcategories";
-					element = wd.findElementByName(eName);
-					element.click();
+//					element = wd.findElementByName(eName);
+//					element.click();
+//					Thread.sleep(3000);
 					Thread.sleep(1000);
+					wd.tap(1, 23, 85, 500);
+					Thread.sleep(3000);
+					
 			
 					eName = "//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[2]/UIAStaticText[1]";
 					element = wd.findElementByXPath(eName);
