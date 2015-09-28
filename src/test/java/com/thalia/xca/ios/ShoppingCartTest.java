@@ -286,6 +286,12 @@ public class ShoppingCartTest {
 				element.click();
 		        Thread.sleep(3000);
 		        
+		        eName = "BtnListActive";
+				element = wd.findElementByName(eName);
+				element.click();
+		        Thread.sleep(6000);
+		        
+		        
 		        if (iCap.screenHeight < 1024){
 		        	eName = "Article on wishlist";
 					element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[2]/UIACollectionView[1]/UIACollectionCell[1]");

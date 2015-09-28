@@ -4,7 +4,7 @@ import java.io.File;
 
 public final class AppiumSetup {
 
-	public static final String udid = "38b5c62d8821918e3ce8c10ca5a0ca693bb11d12"; // ipod schwarz
+//	public static final String udid = "38b5c62d8821918e3ce8c10ca5a0ca693bb11d12"; // ipod schwarz
 //	public static final String udid = "1874cce495990ad81419c700ecd52ecd20d205d0"; // ipod weiß
 //	public static final String udid = "e15942aced8806109d52237b515ad7c1a97cabba"; // ipod liquid
 //	public static final String udid = "70911e2530c8ee3088af7834c0f893c0e77a801f"; // dr. robotnik
@@ -20,7 +20,7 @@ public final class AppiumSetup {
 //	public static final String udid = "335bbd1b2f0f100a000be1450be7d5c2cffbfab3"; // iPhone5
 //	public static final String udid = "9440f01e6c4e8bd43d8bd6826ec3305321db23d0"; // iPhone5 silber
 //	public static final String udid = "80af042d16f227e6564174b20db307e1eac5e416"; // iPad Zidane
-//	public static final String udid = "33e3e81f706261acf0b40ca2632352acbe8cb7d2"; // iPod Yeööpw
+	public static final String udid = "33e3e81f706261acf0b40ca2632352acbe8cb7d2"; // iPod Yeööpw
 //	public static final String udid = "80af042d16f227e6564174b20db307e1eac5e416"; // iPad new White
 
 	

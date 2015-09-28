@@ -247,6 +247,11 @@ public class WishListTest {
 		        Thread.sleep(6000);
 		        
 		        wd.getPageSource();
+		        eName = "BtnListActive";
+				element = wd.findElementByName(eName);
+				element.click();
+		        Thread.sleep(6000);
+		        
 		        eName = "ic warenkorb";
 				element = wd.findElementByName(eName);
 				element.click();
@@ -310,6 +315,11 @@ public class WishListTest {
 				element = wd.findElementByName(eName);
 				element.click();
 		        Thread.sleep(3000);
+		        
+		        eName = "BtnListActive";
+				element = wd.findElementByName(eName);
+				element.click();
+		        Thread.sleep(6000);
 		        
 		        eName = "ic trash";
 				element = wd.findElementByName(eName);
@@ -382,6 +392,11 @@ public class WishListTest {
 				element = wd.findElementByName(eName);
 				element.click();
 		        Thread.sleep(3000);
+		        
+		        eName = "BtnListActive";
+				element = wd.findElementByName(eName);
+				element.click();
+		        Thread.sleep(6000);
 		        
 		        eName = "Article on list";
 				element = wd.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[2]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");

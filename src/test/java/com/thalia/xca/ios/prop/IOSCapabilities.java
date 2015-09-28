@@ -23,7 +23,7 @@ public class IOSCapabilities {
 
 	public IOSDriver<MobileElement> setCap() throws MalformedURLException, UnknownHostException, InterruptedException {
 		
-		String computername = InetAddress.getLocalHost().getHostName();
+		final String currentUser = System.getProperty("user.name");
 		
 		IOSDriver<MobileElement> wd = null;
 
@@ -32,7 +32,7 @@ public class IOSCapabilities {
 		capabilities.setCapability("platformName", "iOS");
 		capabilities.setCapability("bundleId", AppiumSetup.bundleId);
 
-		if (computername.equals("Reserve2-iMac.local")) {
+        if (!currentUser.equals("jenkins")){	
 
 			capabilities.setCapability("udid", AppiumSetup.udid);
 			capabilities.setCapability("app", AppiumSetup.localPath);
