@@ -4,7 +4,6 @@ import static org.junit.Assert.assertTrue;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 
-import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -48,7 +47,7 @@ public class IOSCapabilities {
 			String udid = System.getProperty("UDID");
 			String name = System.getProperty("NAME");
 
-			capabilities.setCapability("app", AppiumSetup.jenkinsPath);
+			capabilities.setCapability("app", AppiumSetup.localPath);
 			capabilities.setCapability("platformVersion", version);
 			capabilities.setCapability("udid", udid);
 			capabilities.setCapability("deviceName", name);
